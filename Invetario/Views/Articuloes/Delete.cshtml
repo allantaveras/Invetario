@@ -1,0 +1,64 @@
+﻿@model Invetario.Models.Articulo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>Estas seguro que quieres borrar esto?</h3>
+<div>
+    <h4>Articulo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion_articulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion_articulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.existencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.existencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_tipo_inventario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_tipo_inventario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costo_unitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costo_unitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("vOLVER", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Invetario.Models.Articulo>
+
+@{
+    ViewBag.Title = "Articulos";
+}
+
+<h2>Articulos</h2>
+
+<p>
+    @Html.ActionLink("Crear", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion_articulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.existencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_tipo_inventario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costo_unitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion_articulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.existencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_tipo_inventario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costo_unitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_articulo }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_articulo }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_articulo })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+

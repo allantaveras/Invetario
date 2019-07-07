@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Invetario.Models.Transaccion>
+
+@{
+    ViewBag.Title = "Transacciones";
+}
+
+<h2>Transacciones</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_transaccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_articulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.monto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_transaccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_articulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.monto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_transaccion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_transaccion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_transaccion })
+        </td>
+    </tr>
+}
+
+</table>

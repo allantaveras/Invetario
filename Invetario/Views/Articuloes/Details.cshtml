@@ -1,0 +1,58 @@
+﻿@model Invetario.Models.Articulo
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Articulos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion_articulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion_articulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.existencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.existencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_tipo_inventario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_tipo_inventario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costo_unitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costo_unitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_articulo }) |
+    @Html.ActionLink("Volver", "Index")
+</p>
